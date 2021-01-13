@@ -20,9 +20,12 @@ public class ContactDeleteFromGroupTest extends TestBase {
 
         // Check if Contact is present, if not - creates one
         if (app.db().contacts().size() == 0) {
-            ContactData newContact = new ContactData().withfName("Vasili").withmName("Petrovich").withlName("Vasilevski").withCompany("Tovarishchestvo Tovarishchei").withAddress("Mostovaja str. 2, Moscow").withHomePhone("9123-123-4567")
-                    .withMobilePhone("234-5656").withWorkPhone("454-53434").withEmail("ivanych@mail.ru").withBday("1").withbMonth("April")
-                    .withbYear("1990").withaDay("1").withaMonth("April").withaYear("2020");
+            ContactData newContact = new ContactData().withfName("Jack").withlName("Levine")
+                    .withNick("Jacks").withTitle("Mr.").withCompany("LevinS inc")
+                    .withAddress("205 Riverside str.").withHomePhone("9123-123-4567").withMobilePhone("234-5656")
+                    .withWorkPhone("454-53434").withFax("343-43434").withEmail("levinjack@gmail.com")
+                    .withEmail2("levins@gmail.com").withBday("1").withbMonth("April").withbYear("1990")
+                    .withaDay("1").withaMonth("April").withaYear("2020");
             app.contact().create(newContact, true);
         }
         app.goTo().homePage();

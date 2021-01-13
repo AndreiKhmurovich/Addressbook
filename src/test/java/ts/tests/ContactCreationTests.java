@@ -55,48 +55,9 @@ public class ContactCreationTests extends TestBase {
         app.contact().create(new ContactData().withfName(contact.getfName())
                 .withlName(contact.getlName()).withHomePhone(contact.getHomePhone())
                 .withPhoto(contact.getPhoto()).inGroup(allGroups.iterator().next()), true);
-
-/*        ContactData contact = new ContactData()
-                .withfName("Vasili").withmName("Petrovich").withlName("Vasilevski").withNick("Ivanych").withTitle("Tovarisch").withCompany("Tovarishchestvo Tovarishchei")
-                .withAddress("Mostovaja str. 2, Moscow").withHomePhone("9123-123-4567").withMobilePhone("234-5656").withWorkPhone("454-53434").withFax("343-43434")
-                .withEmail("ivanych@mail.ru").withEmail2("tovarishchivan@mail.ru").withBday("1").withbMonth("April").withbYear("1990").withaDay("1")
-                .withaMonth("April").withaYear("2020").withGroup("MyNewGroup");*/
-
-
         app.goTo().homePage();
         Contacts after = app.db().contacts();
         assertThat(after.size(), equalTo(before.size() + 1));
-
-
-        // Finding max element (id) in contactList
-        // Option 1 (using for loop)
-/*              int max = 0;
-                for (ContactData g : after) {
-                    if (g.getId() > max) {
-                        max = g.getId();
-                    }
-                }   */
-
-
-        //Option 2 (using Comparator)
-        // Option 2.1 (full implementation)
-/*                  Comparator<? super ContactData> byId = new Comparator<ContactData>() {
-                    @Override
-                        public int compare(ContactData o1, ContactData o2) {
-                        return Integer.compare(o1.getId(), o2.getId());
-                        }
-                    }
-                    int max1 = after.stream().max(byId).get().getId();  */
-
-        // Option 2.2 (using Lambda)
-/*                  Comparator<? super ContactData> byId = (o1, o2) -> Integer.compare(o1.getId(), o2.getId());
-                    int max1 = after.stream().max(byId).get().getId();  */
-
-        // Option 2.2.1 (optimized)
-        /*int max1 = after.stream().max((Comparator<ContactData>) (o1, o2) -> Integer.compare(o1.getId(), o2.getId())).get().getId();*/
-
-        //contact.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt());
-        //contact.setId(after.stream().max((o1, o2) -> Integer.compare(o1.getId(), o2.getId())).get().getId());
         contact.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt());
         assertThat(after, equalTo(before.withAdded(contact)));
     }

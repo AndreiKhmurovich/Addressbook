@@ -22,10 +22,12 @@ public class ContactAddressTest extends TestBase {
 
         // Check if Contact is present, if not - creates one
         if (app.contact().list().size() == 0) {
-            app.contact().create(new ContactData().withfName("Vasili").withmName("Petrovich").withlName("Vasilevski").withNick("Ivanych").withTitle("Tovarisch")
-                    .withCompany("Tovarishchestvo Tovarishchei").withAddress("Mostovaja str. 2, Moscow").withHomePhone("9123-123-4567").withMobilePhone("234-5656")
-                    .withWorkPhone("454-53434").withFax("343-43434").withEmail("ivanych@mail.ru").withEmail2("tovarishchivan@mail.ru").withBday("1").withbMonth("April")
-                    .withbYear("1990").withaDay("1").withaMonth("April").withaYear("2020"), true);
+            app.contact().create(new ContactData().withfName("Jack").withlName("Levine")
+                    .withNick("Jacks").withTitle("Mr.").withCompany("LevinS inc")
+                    .withAddress("205 Riverside str.").withHomePhone("9123-123-4567").withMobilePhone("234-5656")
+                    .withWorkPhone("454-53434").withFax("343-43434").withEmail("levinjack@gmail.com")
+                    .withEmail2("levins@gmail.com").withBday("1").withbMonth("April").withbYear("1990")
+                    .withaDay("1").withaMonth("April").withaYear("2020"), true);
             app.wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         }
 
