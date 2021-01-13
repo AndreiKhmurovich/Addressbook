@@ -51,11 +51,11 @@ public class ContactModificationTests extends TestBase {
         // Check if Contact is present, if not - creates one
         if (app.db().contacts().size() == 0) {
             Groups allGroups = app.db().groups();
-            app.contact().create(new ContactData().withfName("Vasili").withmName("Petrovich").withlName("Vasilevski")
-                    .withNick("Ivanych").withTitle("Tovarisch").withCompany("Tovarishchestvo Tovarishchei")
-                    .withAddress("Mostovaja str. 2, Moscow").withHomePhone("9123-123-4567").withMobilePhone("234-5656")
-                    .withWorkPhone("454-53434").withFax("343-43434").withEmail("ivanych@mail.ru")
-                    .withEmail2("tovarishchivan@mail.ru").withBday("1").withbMonth("April").withbYear("1990")
+            app.contact().create(new ContactData().withfName("Jack").withlName("Levine")
+                    .withNick("Jacks").withTitle("Mr.").withCompany("LevinS inc")
+                    .withAddress("205 Riverside str.").withHomePhone("9123-123-4567").withMobilePhone("234-5656")
+                    .withWorkPhone("454-53434").withFax("343-43434").withEmail("levinjack@gmail.com")
+                    .withEmail2("levins@gmail.com").withBday("1").withbMonth("April").withbYear("1990")
                     .withaDay("1").withaMonth("April").withaYear("2020").inGroup(allGroups.iterator().next()), true);
         }
         app.goTo().homePage();
@@ -68,12 +68,6 @@ public class ContactModificationTests extends TestBase {
         Groups allGroups = app.db().groups();
         Contacts before = app.db().contacts();
         ContactData modifiedContact = before.iterator().next();
-/*        ContactData contact = new ContactData().withId(modifiedContact.getId()).withmName("Petrovich").withlName("Vasilevski")
-                .withNick("Ivanych").withTitle("Tovarisch").withCompany("Tovarishchestvo Tovarishchei")
-                .withAddress("Mostovaja str. 2, Moscow").withHomePhone("9123-123-4567").withMobilePhone("234-5656")
-                .withWorkPhone("454-53434").withFax("343-43434").withEmail("ivanych@mail.ru")
-                .withEmail2("tovarishchivan@mail.ru").withBday("1").withbMonth("April").withbYear("1990")
-                .withaDay("1").withaMonth("April").withaYear("2020").inGroup(allGroups.iterator().next());*/
         app.contact().modifyContact(contact.withId(modifiedContact.getId()));
         app.goTo().homePage();
 
