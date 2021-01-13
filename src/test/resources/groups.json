@@ -1,0 +1,17 @@
+[
+  {
+    "name": "My new group Name 0",
+    "header": "My new group Header 0",
+    "footer": "My new group Footer 0"
+  },
+  {
+    "name": "My new group Name 1",
+    "header": "My new group Header 1",
+    "footer": "My new group Footer 1"
+  },
+  {
+    "name": "My new group Name 2",
+    "header": "My new group Header 2",
+    "footer": "My new group Footer 2"
+  }
+]

@@ -1,0 +1,37 @@
+<list>
+  <group>
+    <name>My new group Name 0</name>
+    <header>My new group Header 0</header>
+    <footer>My new group Footer 0</footer>
+  </group>
+  <group>
+    <name>My new group Name 1</name>
+    <header>My new group Header 1</header>
+    <footer>My new group Footer 1</footer>
+  </group>
+  <group>
+    <name>My new group Name 2</name>
+    <header>My new group Header 2</header>
+    <footer>My new group Footer 2</footer>
+  </group>
+  <group>
+    <name>My new group Name 3</name>
+    <header>My new group Header 3</header>
+    <footer>My new group Footer 3</footer>
+  </group>
+  <group>
+    <name>My new group Name 4</name>
+    <header>My new group Header 4</header>
+    <footer>My new group Footer 4</footer>
+  </group>
+  <group>
+    <name>My new group Name 5</name>
+    <header>My new group Header 5</header>
+    <footer>My new group Footer 5</footer>
+  </group>
+  <group>
+    <name>My new group Name 6</name>
+    <header>My new group Header 6</header>
+    <footer>My new group Footer 6</footer>
+  </group>
+</list>
